@@ -37,8 +37,7 @@ class ekipa{
         for(int i=0;i<brNaKosarkari;i++)this->kosarkari[i]=kosarkari[i];
     }
     void setpPoeni(int pPoeni){
-        if(this->pPoeni>pPoeni)plata=0;
-        else if(this->pPoeni<pPoeni)plata=pPoeni*50;
+        plata=pPoeni*50;
         this->pPoeni=pPoeni;
     }
 
