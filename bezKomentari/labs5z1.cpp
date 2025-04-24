@@ -11,7 +11,8 @@ class velosipedist{
 
     public:
     velosipedist(const char *imePrez="",int god=0,int poeni=0){
-        strncpy_s(this->imePrez,imePrez,29);
+        strncpy(this->imePrez,imePrez,29);
+        this->imePrez[29] = '\0';
         this->god=god;this->poeni=poeni;
     }
 
@@ -34,8 +35,10 @@ class tim{
     
     public:
     tim(const char *ime="",const char *sponzor="",velosipedist *clenovi=NULL,int brNaClenovi=0){
-        strncpy_s(this->ime,ime,29);
-        strncpy_s(this->sponzor,sponzor,29);
+        strncpy(this->ime,ime,29);
+        this->ime[29] = '\0';
+        strncpy(this->sponzor,sponzor,29);
+        this->sponzor[29] = '\0';
         if(brNaClenovi<=maksClenovi){
             for(int i=0;i<brNaClenovi;i++)this->clenovi[i]=clenovi[i];
         }
