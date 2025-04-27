@@ -12,7 +12,8 @@ class velosipedist{
     public:
     velosipedist(const char *imePrez="",int god=0,int poeni=0){//konstruktor moze odma da se
         //povika pri deklaracija na objekt
-        strncpy_s(this->imePrez,imePrez,29);//this konkretizira deka se misli na promenlivata
+        strncpy(this->imePrez,imePrez,29);//this konkretizira deka se misli na promenlivata
+        this->imePrez[29] = '\0'; // napravi manuelno null-terminiranje na nizata karakteri
         //koja pripaga na objektot a ne druga promenliva vo klasata
         this->god=god;this->poeni=poeni;//isto e kako da se vo posebni redovi samo zaso se
         //kratki gi staiv u ist red
@@ -37,8 +38,10 @@ class tim{
     
     public:
     tim(const char *ime="",const char *sponzor="",velosipedist *clenovi=NULL,int brNaClenovi=0){
-        strncpy_s(this->ime,ime,29);
-        strncpy_s(this->sponzor,sponzor,29);
+        strncpy(this->ime,ime,29);
+        this->ime[29] = '\0'; // napravi manuelno null-terminiranje na nizata karakteri
+        strncpy(this->sponzor,sponzor,29);
+        this->sponzor[29] = '\0'; // napravi manuelno null-terminiranje na nizata karakteri
         if(brNaClenovi<=maksClenovi){
             for(int i=0;i<brNaClenovi;i++)this->clenovi[i]=clenovi[i];
         }

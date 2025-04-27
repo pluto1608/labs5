@@ -8,7 +8,8 @@ class kosarkar{
     int oPlata;
     public:
     kosarkar(const char *ime="",int oPlata=0){
-        strncpy_s(this->ime,ime,29);
+        strncpy(this->ime,ime,29);
+        this->ime[29] = '\0'; // napravi manuelno null-terminiranje na nizata karakteri
         this->oPlata=oPlata;
     }
 
@@ -28,7 +29,8 @@ class ekipa{
     public:
 
     ekipa(const char *ime="",int brNaKosarkari=0,int pPoeni=0,kosarkar *kosarkari=NULL){
-        strncpy_s(this->ime,ime,29);
+        strncpy(this->ime,ime,29);
+        this->ime[29] = '\0'; // napravi manuelno null-terminiranje na nizata karakteri
         if(brNaKosarkari>this->brNaKosarkari)this->brNaKosarkari=brNaKosarkari;
         if(pPoeni>this->pPoeni){
             this->pPoeni=pPoeni;
